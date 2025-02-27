@@ -1,0 +1,148 @@
+@use 'variables' as *;
+@use 'reset';
+
+body {
+  min-height: 100vh;
+  background: $clr-grey-100;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-regular;
+  color: $clr-grey-500;
+}
+
+main {
+  padding-block: $padding-block-main;
+}
+
+.container {
+  width: calc(100% - 2 * $padding-inline-main);
+  margin-inline: auto;
+  display: grid;
+  row-gap: $spacing-l;
+}
+
+.card {
+  padding: $padding-card;
+  border-radius: 10px;
+  box-shadow: 15px 15px 20px 10px rgb(0 0 0 / 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+
+    img {
+      border-radius: 50%;
+    }
+
+    .card__intro {
+      display: flex;
+      flex-direction: column;
+    }
+
+    p:first-child {
+      font-size: 0.875rem; // 14px
+    }
+
+    p:last-child {
+      font-size: 0.75rem; // 12px
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem; // 20px
+  }
+
+  h3,
+  header p:first-child {
+    font-weight: $font-bold;
+  }
+}
+
+.card--darkblue img,
+.card--purple img {
+  border: 2px solid;
+}
+
+.card--purple {
+  background-color: $clr-purple-500;
+  color: $clr-purple-50;
+  background-image: url('/assets/images/bg-pattern-quotation.svg');
+  background-repeat: no-repeat;
+  background-position: right 60px top 0;
+
+  img {
+    border-color: $clr-purple-300;
+  }
+
+  p:not(:first-child) {
+    color: $clr-purple-300;
+  }
+}
+
+.card--grey {
+  background-color: $clr-grey-500;
+  color: $clr-grey-100;
+}
+
+.card--darkblue {
+  background-color: $clr-darkblue;
+  color: $clr-grey-200;
+
+  img {
+    border-color: $clr-purple-500;
+  }
+}
+
+.attribution {
+  font-size: 0.85em; // 11px
+  text-align: center;
+  margin-block: 1em;
+
+  a {
+    color: $clr-attribution;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    row-gap: $spacing-m;
+    column-gap: $spacing-l;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      'card1 card1'
+      'card2 card3'
+      'card4 card4'
+      'card5 card5';
+  }
+
+  .card:first-child {
+    grid-area: card1;
+  }
+
+  .card:nth-child(4) {
+    grid-area: card4;
+  }
+
+  .card:last-child {
+    grid-area: card5;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1115px;
+    justify-content: center;
+    height: 100%;
+    align-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      'card1 card1 card2 card5'
+      'card3 card4 card4 card5';
+  }
+}
