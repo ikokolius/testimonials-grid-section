@@ -76,9 +76,6 @@ main {
 .card--purple {
   background-color: hsl(263, 55%, 52%);
   color: hsl(260, 100%, 95%);
-  background-image: url("../images/bg-pattern-quotation.svg");
-  background-repeat: no-repeat;
-  background-position: right 60px top 0;
 }
 .card--purple img {
   border-color: hsl(264, 82%, 80%);
@@ -125,6 +122,11 @@ main {
   }
   .card:last-child {
     grid-area: card5;
+  }
+  .card--purple {
+    background-image: url("../images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: right 60px top 0;
   }
 }
 @media (min-width: 1024px) {

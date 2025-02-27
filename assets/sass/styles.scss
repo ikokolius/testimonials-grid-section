@@ -72,9 +72,6 @@ main {
 .card--purple {
   background-color: $clr-purple-500;
   color: $clr-purple-50;
-  background-image: url('../images/bg-pattern-quotation.svg');
-  background-repeat: no-repeat;
-  background-position: right 60px top 0;
 
   img {
     border-color: $clr-purple-300;
@@ -131,6 +128,12 @@ main {
 
   .card:last-child {
     grid-area: card5;
+  }
+
+  .card--purple {
+    background-image: url('../images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: right 60px top 0;
   }
 }
 
