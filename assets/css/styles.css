@@ -76,7 +76,7 @@ main {
 .card--purple {
   background-color: hsl(263, 55%, 52%);
   color: hsl(260, 100%, 95%);
-  background-image: url("assets/images/bg-pattern-quotation.svg");
+  background-image: url("../images/bg-pattern-quotation.svg");
   background-repeat: no-repeat;
   background-position: right 60px top 0;
 }
